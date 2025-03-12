@@ -1,27 +1,22 @@
 {
-  "files": [],
-  "references": [
-    { "path": "./tsconfig.app.json" },
-    { "path": "./tsconfig.node.json" }
-  ],
   "compilerOptions": {
-    "baseUrl": ".",
-    "paths": {
-      "@/*": ["./src/*"]
-    },
-    "module": "ESNext", // Explicitly set for ES modules
+    "target": "ES2022",
+    "lib": ["ES2023"],
+    "module": "ESNext",
     "moduleResolution": "Node", // Use Node.js resolution
-    "target": "ESNext", // Target modern JavaScript
-    "esModuleInterop": true, // Enable interop between CommonJS and ES Modules
-    "skipLibCheck": true, // Skip type checking of declaration files
-    "forceConsistentCasingInFileNames": true, // Ensure consistent file casing
-    "allowJs": true, // Allow JavaScript files
-    "resolveJsonModule": true, // Allow JSON imports
-    "noImplicitAny": false, // Disable noImplicitAny (as per your config)
-    "noUnusedParameters": false, // Disable noUnusedParameters
-    "noUnusedLocals": false, // Disable noUnusedLocals
-    "strictNullChecks": false // Disable strict null checks
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true, // Fixes TS1259 for 'cors'
+    "skipLibCheck": true, // Ignores missing type definitions like 'undici-types'
+    "allowJs": true,
+    "resolveJsonModule": true,
+    "noEmit": false,
+    "outDir": "./dist",
+    "rootDir": ".",
+    "strict": true,
+    "noUnusedLocals": false,
+    "noUnusedParameters": false,
+    "noFallthroughCasesInSwitch": true
   },
-  "include": ["**/*.ts", "**/*.tsx"], // Include all TypeScript files
-  "exclude": ["node_modules"]
+  "include": ["server.ts", "api/**/*.ts"],
+  "exclude": ["node_modules", "src"]
 }

@@ -1,7 +1,7 @@
 // server.ts
 import { createServer } from "http";
 import { parse } from "url";
-import { handler } from "./api/agent";
+import handler from "./api/agent"; // Changed from { handler } to default import
 import cors from "cors";
 
 process.on("uncaughtException", (err) => {
@@ -16,7 +16,7 @@ process.on("unhandledRejection", (reason, promise) => {
 
 const server = createServer(async (req, res) => {
   try {
-    const corsHandler = cors({ origin: "*" }); // Allow all for now, update to Vercel URL later
+    const corsHandler = cors({ origin: "*" }); // Allow all origins for now
     await new Promise((resolve, reject) => {
       corsHandler(req, res, (err) => (err ? reject(err) : resolve(null)));
     });
