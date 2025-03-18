@@ -3,10 +3,10 @@
     "target": "ES2022",
     "lib": ["ES2023"],
     "module": "ESNext",
-    "moduleResolution": "Node", // Use Node.js resolution
+    "moduleResolution": "Node",
     "esModuleInterop": true,
-    "allowSyntheticDefaultImports": true, // Fixes TS1259 for 'cors'
-    "skipLibCheck": true, // Ignores missing type definitions like 'undici-types'
+    "allowSyntheticDefaultImports": true,
+    "skipLibCheck": true,
     "allowJs": true,
     "resolveJsonModule": true,
     "noEmit": false,
@@ -17,6 +17,6 @@
     "noUnusedParameters": false,
     "noFallthroughCasesInSwitch": true
   },
-  "include": ["server.ts", "api/**/*.ts"],
-  "exclude": ["node_modules", "src"]
+  "include": ["api/**/*.ts", "src/**/*.ts"],
+  "exclude": ["node_modules"]
 }

@@ -25,10 +25,8 @@ const Footer: React.FC = () => {
           
           <div className="flex items-center gap-4">
             {[
-              { icon: <Instagram size={20} />, href: '#' },
-              { icon: <Twitter size={20} />, href: '#' },
-              { icon: <Linkedin size={20} />, href: '#' },
-              { icon: <Github size={20} />, href: '#' }
+              { icon: <Twitter size={20} />, href: 'https://x.com/aelix_ai' },
+              { icon: <Github size={20} />, href: 'https://github.com/NikhilRaikwar/Aelix' }
             ].map((item, i) => (
               <a 
                 key={i}

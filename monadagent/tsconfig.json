@@ -1,0 +1,29 @@
+// {
+//     "compilerOptions": {
+//       "target": "ES2015",
+//       "module": "commonjs",
+//       "strict": true,
+//       "esModuleInterop": true,
+//       "skipLibCheck": true,
+//       "outDir": "./dist",
+//       "rootDir": "./",
+//       "resolveJsonModule": true
+//     },
+//     "include": ["*.ts"],
+//     "exclude": ["node_modules"]
+//   }
+
+{
+  "compilerOptions": {
+    "target": "ESNext",              // Latest JS features ke liye
+    "module": "commonjs",            // Node.js compatibility
+    "strict": true,                  // Type safety
+    "esModuleInterop": true,         // Interop for CommonJS modules
+    "skipLibCheck": true,            // Faster compilation
+    "outDir": "./dist",              // Output folder
+    "rootDir": "./",                 // Root directory
+    "resolveJsonModule": true        // JSON import support
+  },
+  "include": ["**/*.ts"],            // Recursive .ts files include
+  "exclude": ["node_modules", "dist"] // Exclude dist to avoid re-compilation
+}

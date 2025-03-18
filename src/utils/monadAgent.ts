@@ -1,15 +1,28 @@
 // src/utils/monadAgent.ts
-import axios from "axios";
+export const sendMessageToAgent = async (input: string, privateKey?: string): Promise<{ response: string }> => {
+  const API_ENDPOINT = import.meta.env.VITE_API_ENDPOINT; // .env se URL fetch karo
 
-export const sendMessageToAgent = async (input: string, privateKey?: string) => {
-  const apiEndpoint = process.env.VITE_API_ENDPOINT || "https://your-render-backend.onrender.com/api/agent"; // Update with Render URL
-  console.log("Sending to:", apiEndpoint);
+  if (!API_ENDPOINT) {
+    throw new Error('API endpoint not configured. Please set VITE_API_ENDPOINT in .env file.');
+  }
+
   try {
-    const response = await axios.post(apiEndpoint, { input, privateKey }, { headers: { "Content-Type": "application/json" } });
-    console.log("Response:", response.data);
-    return response.data;
+    const response = await fetch(API_ENDPOINT, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({ input, privateKey }),
+    });
+
+    if (!response.ok) {
+      throw new Error(`HTTP error! status: ${response.status}`);
+    }
+
+    const data = await response.json();
+    return data; // { response: "..." }
   } catch (error) {
-    console.error("Error:", error.response?.data || error.message);
-    throw error;
+    console.error('Error sending message to agent:', error);
+    throw error; // ChatInterface mein error handle hoga
   }
 };
