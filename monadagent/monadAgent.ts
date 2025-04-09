@@ -606,7 +606,7 @@ const agentHandler: RequestHandler = async (req: Request, res: Response): Promis
 };
 
 // Setup Express with CORS and routes
-app.use(cors({ origin: "https://aelix-ai.vercel.app" }));
+app.use(cors({ origin: "https://aelix.xyz" }));
 app.use(bodyParser.json());
 app.get("/", (req: Request, res: Response) => {
   res.json({ message: "Welcome to Monad AI Agent! Use POST /agent to interact with the agent." });

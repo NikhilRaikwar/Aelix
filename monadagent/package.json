@@ -19,7 +19,7 @@
         "@types/body-parser": "^1.19.5",
         "@types/cheerio": "^0.22.35",
         "@types/cors": "^2.8.17",
-        "@types/express": "^5.0.0",
+        "@types/express": "^5.0.1",
         "ts-node": "^10.9.2",
         "typescript": "^5.8.2"
     }
