@@ -11,7 +11,7 @@
 Welcome to **Aelix | Monad AI Agent**—an open-source, AI-powered assistant crafted to supercharge your interactions with the Monad Testnet blockchain! 🌐 Aelix is your smart sidekick, capable of autonomously executing 10+ blockchain actions with finesse. 🚀
 
 - 🔑 Set up and manage your wallet effortlessly  
-- 💰 Check your MONAD token balance in a snap  
+- 💰 Check your MONAD token balance in a snap                  
 - 📤 Send MONAD tokens to any address  
 - ✍️ Sign messages with top-notch security  
 - 📜 Peek into your recent transaction history  
